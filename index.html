@@ -184,10 +184,18 @@ Our experience comes from real deployments, real customers, and real business gr
 <footer><div class="wrap"><span>© <span id="y"></span> One-Controller. All rights reserved. Officially ported from onedashaccess</span><span><a href="#terms" data-h>Terms &amp; Privacy</a> · <a href="https://www.facebook.com/ogpisofi" target="_blank" rel="noopener">Facebook</a></span></div></footer>
 <script>
 document.getElementById('y').textContent=new Date().getFullYear();
-var VIDEOS=[{t:'Getting Started (license activation and first login)',id:'VIDEO_ID_1'},{t:'Flashing guide for ESP',id:'VIDEO_ID_2'},{t:'Setting-up Mikrotik BTH (for remote access)',id:'VIDEO_ID_3'}];
+var VIDEOS=[{t:'Getting Started (license activation and first login)',id:'VIDEO_ID_1'},{t:'Flashing guide for ESP',id:'DsQxk4KmU4M'},{t:'Setting-up Mikrotik BTH (for remote access)',id:'b6iidltuDmA'}];
 function play(i){var v=VIDEOS[i],p=document.getElementById('player');p.textContent='';
-if(/^VIDEO_ID/.test(v.id)){p.textContent='Video coming soon: '+v.t}else{var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+v.id+'?rel=0';f.title=v.t;f.loading='lazy';f.allow='accelerometer; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;p.appendChild(f)}
-var b=document.querySelectorAll('#vlist button');for(var k=0;k<b.length;k++)b[k].classList.toggle('on',k===i)}
+if(/^VIDEO_ID/.test(v.id)){p.textContent='Video coming soon: '+v.t}else{var f=document.createElement('iframe');
+f.src='https://www.youtube.com/embed/'+v.id+'?rel=0';
+f.title=v.t;
+f.loading='lazy';
+f.referrerPolicy='strict-origin-when-cross-origin';
+f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+f.allowFullscreen=true;
+p.appendChild(f);}
+var b=document.querySelectorAll('#vlist button');
+for(var k=0;k<b.length;k++)b[k].classList.toggle('on',k===i)}
 VIDEOS.forEach(function(v,i){var li=document.createElement('li'),b=document.createElement('button');b.type='button';
 var n=document.createElement('span');n.className='n';n.textContent=String(i+1).padStart(2,'0');b.appendChild(n);b.appendChild(document.createTextNode(v.t));
 b.onclick=function(){play(i)};li.appendChild(b);document.getElementById('vlist').appendChild(li)});play(0);
