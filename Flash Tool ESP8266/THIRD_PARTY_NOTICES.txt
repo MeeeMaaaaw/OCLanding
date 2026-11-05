@@ -1,0 +1,43 @@
+One-Controller flash package - third-party notices
+==================================================
+
+This package bundles the following third-party components:
+
+- Python 3.7 runtime
+  License: Python Software Foundation License Agreement
+  https://docs.python.org/3.7/license.html
+
+- pyserial
+  License: BSD 3-Clause
+  https://github.com/pyserial/pyserial/blob/master/LICENSE.txt
+
+- esptool
+  License: GNU General Public License v2
+  https://github.com/espressif/esptool/blob/master/LICENSE
+
+- mklittlefs / littlefs
+  License: BSD 3-Clause (littlefs)
+  https://github.com/earlephilhower/mklittlefs
+  https://github.com/littlefs-project/littlefs/blob/master/LICENSE.md
+
+- ESP8266 Arduino core
+  License: GNU Lesser General Public License 2.1
+  https://github.com/esp8266/Arduino/blob/master/LICENSE
+
+- Espressif SDK
+  License: MIT
+  https://github.com/espressif/ESP8266_NONOS_SDK
+
+License texts included under vendor/licenses:
+- esptool-LICENSE (GPL v2)
+- pyserial-LICENSE.txt (BSD 3-Clause)
+- esp8266-core-LICENSE (LGPL 2.1)
+- python-LICENSE.txt (PSF and historical Python licenses)
+- littlefs-LICENSE.md (BSD 3-Clause)
+
+mklittlefs is the esp-quick-toolchain packaging of littlefs; the littlefs
+license text is included above.
+
+The firmware binary is built from the ESP8266 Arduino core and links against
+the Espressif SDK. The firmware source is available from the One-Controller
+project on request for the purpose of relinking the LGPL-covered components.
